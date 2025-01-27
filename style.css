@@ -1,0 +1,109 @@
+body {
+    background-color: #222;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    margin-top: 20px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.galeria picture {
+    width: 100%;
+    height: 300px; /* Establecemos un tamaño fijo para todas las imágenes */
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #444; /* Fondo gris si la imagen no llena el espacio */
+}
+
+.galeria picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que las imágenes se ajusten al contenedor sin deformarse */
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.galeria picture:hover {
+    transform: scale(1.05);
+}
+
+.galeria img:hover {
+    opacity: 0.8;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #ccc;
+}
+
+.modal-title {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 15px;
+}
